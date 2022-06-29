@@ -55,7 +55,7 @@
 
     void loop() {
 
-      randNumber=random(0,16);  //fetch a random number between 1-16
+      randNumber=random(0,20);  //fetch a random number between 1-16
 
       //call the wheel
                //color used for for odd segments, even segments, and for '0'
@@ -68,12 +68,12 @@
     void roulette(uint32_t c,uint32_t d,uint32_t e) {
 
         //spin the number of times (variable 'spin') at full speed
-          for (int i=0; i<16*spins; i++){
+          for (int i=0; i<20*spins; i++){
                advanceOne(c,d,e, 4);
           }   
          
           //slow down and 'settle' on final number
-          for (int i=0; i<(16*6)+randNumber; i++){
+          for (int i=0; i<(20*6)+randNumber; i++){
                advanceOne(c,d,e, (i*.25)+4);
           }
 
@@ -107,11 +107,11 @@
 
                 if (dir){    //if direction var is set to clockwise
                       pos--;  //decrement the position
-                      if(pos<0)  {pos=15;}  //resets running count if < 0}
+                      if(pos<0)  {pos=19;}  //resets running count if < 0}
                 }
                     else{
                       pos++;  //increment the position
-                      if(pos>15)  {pos=0;}  //resets running count if > 15}
+                      if(pos>19)  {pos=0;}  //resets running count if > 15}
                 }
 
     }//end advanceOne function
